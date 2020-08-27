@@ -1,0 +1,54 @@
+.preloader {
+  position: fixed;
+  z-index: 999999;
+  background: #f0f0f0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  visibility: visible;
+  transition: 1s all;
+  opacity: 1;
+}
+.preloader .loader {
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+.preloader .loader .container {
+  justify-content: center;
+}
+.preloader .loader .container .loaderContent .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  line-height: 0.85;
+}
+.preloader.success {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loaderContent {
+  animation: animLogo 1.6s ease-out 1s infinite both;
+}
+
+@keyframes animLogo {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

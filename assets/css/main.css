@@ -1,0 +1,608 @@
+@import url(../css/normilize.css);
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Prosto+One&display=swap");
+@font-face {
+  font-family: "Monument Extended Ultrabold";
+  src: url(../fonts/MonumentExtended-Ultrabold.woff2);
+}
+@font-face {
+  font-family: "Monument Extended Regular";
+  src: url(../fonts/MonumentExtended-Regular.woff2);
+}
+.preloader {
+  position: fixed;
+  z-index: 999999;
+  background: #191818;
+  width: 100%;
+  height: 100%;
+  visibility: visible;
+  transition: 1s all;
+  opacity: 1;
+}
+.preloader.success {
+  opacity: 0;
+  visibility: hidden;
+}
+.preloader .loader {
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+.preloader .loader .container {
+  justify-content: center;
+}
+.preloader .loader .container .loaderContent .logo {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  justify-content: center;
+  flex-flow: column nowrap;
+  line-height: 0.85;
+}
+.preloader .loader .container .loaderContent .logo span {
+  font-family: "Monument Extended Ultrabold";
+  font-size: 10vw;
+  background: linear-gradient(to left, #9929ea, #5808fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.loaderContent {
+  animation: anim 1.6s ease-out 1s infinite both;
+}
+
+@keyframes anim {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+html {
+  cursor: none;
+}
+
+:root {
+  --xS: 120px;
+  --yS: 120px;
+  --cSize: 35px;
+  --cSizeSmall: 10px;
+}
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--cSize);
+  height: var(--cSize);
+  background: linear-gradient(-45deg, #9929ea, #5808fb);
+  border-radius: 50%;
+  transform: translate(calc(var(--xS) - var(--cSize)/2), calc(var(--yS) - var(--cSize)/2));
+  will-change: transform;
+  transform-style: preserve-3d;
+  z-index: 99;
+  pointer-events: none;
+}
+
+.cursorLarge {
+  opacity: 0.5;
+  transition: transform 0.1s linear;
+}
+
+.cursorSmall {
+  width: var(--cSizeSmall);
+  height: var(--cSizeSmall);
+  transform: translate(calc(var(--xS) - var(--cSizeSmall)/2), calc(var(--yS) - var(--cSizeSmall)/2));
+}
+
+body {
+  height: 100%;
+  font-family: "Open Sans Condensed", sans-serif;
+  animation: bg 5s linear infinite;
+}
+
+.button {
+  padding: 15px 30px;
+  background: linear-gradient(to right, #5808fb, #9929ea);
+  color: #fafafa;
+  font-size: 1vw;
+  font-family: "Prosto One", cursive;
+  border-radius: 5px;
+  text-align: center;
+  transform: skew(-21deg);
+  transition: all 0.3s ease;
+  background-size: 150% auto;
+}
+.button span {
+  display: inline-block;
+  transform: skew(21deg);
+}
+.button:hover {
+  background-position: right;
+  box-shadow: 0 0 10px #5808fb;
+}
+.button:active {
+  background: #fafafa;
+  color: #191818;
+  box-shadow: 0 0 10px #fafafa;
+}
+
+.sectionOne .container .content .contentItemOne h3, .sectionTwo .container .content .contentItemOne h3 {
+  color: #191818;
+  font-size: 1.95vw;
+}
+.sectionOne .container .content .contentItemOne h3 span, .sectionTwo .container .content .contentItemOne h3 span {
+  background: linear-gradient(to left, #9929ea, #5808fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sectionOne .container .content .contentItemOne .itemTitle, .sectionTwo .container .content .contentItemOne .itemTitle {
+  font-size: 1.5vw;
+}
+.sectionOne .container .content .contentItemOne p, .sectionTwo .container .content .contentItemOne p {
+  color: #191818;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 1.5vw;
+}
+
+section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  background: #191818;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+section .container .content {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-flow: row nowrap;
+}
+section .container .content .contentItemOne, section .container .content .contentItemTwo {
+  width: 45%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+section .container .content .contentItemTwo {
+  z-index: 2;
+  border-radius: 5px;
+}
+section .container .content .contentItemTwo img {
+  transition: all 0.5s ease;
+  box-shadow: 0 0 20px #191818;
+  position: relative;
+  display: block;
+  border-radius: 5px;
+}
+section .container .content .contentItemTwo img:hover {
+  box-shadow: 0 0 30px #191818;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.button {
+  font-family: "Prosto One", cursive;
+}
+
+.fadeSlider {
+  width: 45%;
+  z-index: 999;
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  display: flex;
+  align-items: center;
+}
+.fadeSlider .sliderItem {
+  position: absolute;
+  opacity: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  font-family: "Monument Extended Regular";
+  font-size: 10vw;
+  width: inherit;
+  transition: all 0.2s ease-out;
+  color: #fafafa;
+}
+.fadeSlider .sliderItem span {
+  text-shadow: 1px 1px 16px rgba(255, 255, 255, 0.75);
+  letter-spacing: 3px;
+}
+.fadeSlider .sliderItem.visibleItem {
+  opacity: 1;
+}
+
+.customShapeBottom {
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+  transition: 0.3s;
+  z-index: 7;
+}
+.customShapeBottom svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 60px;
+  transform: rotateY(180deg);
+  box-shadow: 0 0 20px #191818;
+}
+
+.customShapeTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 11;
+}
+.customShapeTop svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 60px;
+  transform: rotateY(180deg);
+  box-shadow: 0 0 20px #191818;
+}
+
+.customShapeBottomReverse {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+  z-index: 13;
+}
+.customShapeBottomReverse svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 60px;
+}
+
+.customShapeTopReverse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 12;
+}
+.customShapeTopReverse svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 60px;
+}
+
+.shapeFill {
+  fill: #191818;
+}
+
+.activeSkew {
+  opacity: 1;
+}
+
+.animShowLeft {
+  transform: translateX(-120%);
+  opacity: 0;
+  transition: all 1s ease;
+}
+.animShowLeft.activeAnim, .activeAnim .animShowLeft {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.animShowRight {
+  transform: translateX(120%);
+  opacity: 0;
+  transition: all 1s ease;
+}
+.animShowRight.activeAnim, .activeAnim .animShowRight {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.animShowScale {
+  transform: scale(0);
+  opacity: 0;
+  transition: all 1s ease;
+}
+.animShowScale.activeAnim, .activeAnim .animShowScale {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.animShowTop {
+  transform: translateY(-120%);
+  opacity: 0;
+  transition: all 1s ease;
+}
+.animShowTop.activeAnim, .activeAnim .animShowTop {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.animShowBottom {
+  transform: translateY(120%);
+  opacity: 0;
+  transition: all 1s ease;
+}
+.animShowBottom.activeAnim, .activeAnim .animShowBottom {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.sectionOne {
+  background: url(../img/bgOne.jpg) center no-repeat;
+  position: relative;
+}
+.sectionOne::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  opacity: 0.9;
+  z-index: 5;
+}
+.sectionOne .container {
+  z-index: 10;
+}
+.sectionOne .container .contentHero {
+  flex-flow: row wrap;
+  -webkit-user-select: none;
+          user-select: none;
+}
+.sectionOne .container .contentHero .heroTitle {
+  position: relative;
+  font-family: "Monument Extended Ultrabold";
+  font-size: 18vw;
+  width: 100%;
+  color: #191818;
+  z-index: 4;
+  text-align: center;
+  line-height: 0.8;
+  letter-spacing: 5px;
+  text-shadow: 1px 1px 16px rgba(0, 0, 0, 0.6);
+}
+.sectionOne .scrollButton {
+  position: absolute;
+  bottom: -33%;
+  right: -3%;
+  height: 100%;
+  transform: rotate(90deg);
+  font-family: "Prosto One", cursive;
+  font-size: 1vw;
+  z-index: 100;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.sectionOne .scrollButton .scrollTo {
+  color: #fafafa;
+  transition: all 0.3s ease;
+}
+.sectionOne .scrollButton .scrollTo:hover {
+  color: #191818;
+}
+
+.additionBg {
+  background: url(../img/bg.jpg) center no-repeat;
+}
+.additionBg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-45deg, #9929ea, #5808fb);
+  opacity: 0.7;
+  z-index: 5;
+}
+
+.sectionTwo {
+  background: #191818;
+  z-index: 1;
+}
+.sectionTwo .container .content {
+  flex-flow: row-reverse nowrap;
+}
+.sectionTwo .container .content .contentItemOne h3, .sectionTwo .container .content .contentItemOne p {
+  color: #fafafa;
+}
+.sectionTwo .container .content .contentItemTwo img {
+  box-shadow: 0 0 10px #fafafa;
+}
+.sectionTwo .container .content .contentItemTwo img:hover {
+  box-shadow: 0 0 20px #fafafa;
+}
+
+footer {
+  height: 250px;
+  width: 100%;
+}
+footer .container {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+footer .container .heroSocials {
+  width: 30%;
+  z-index: 99;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-flow: row nowrap;
+}
+footer .container .heroSocials a {
+  padding: 10px;
+}
+footer .container .heroSocials a svg {
+  fill: #fafafa;
+  width: 1.5vw;
+  height: 1.5vw;
+  transition: 0.3s ease;
+}
+footer .container .heroSocials a svg:hover {
+  transform: scale(1.2);
+  fill: #191818;
+}
+footer .container .footerLine {
+  width: 70%;
+  height: 2px;
+  position: relative;
+  right: -5%;
+  background: #fafafa;
+}
+
+@media screen and (max-width: 768px) {
+  .page section .container .content {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-flow: column nowrap;
+  }
+  .page section .container .content .contentItemOne, .page section .container .content .contentItemTwo {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .page section .container .content .contentItemOne h3, .page section .container .content .contentItemTwo h3 {
+    font-size: 3.5vw;
+  }
+  .page section .container .content .contentItemOne .itemTitle, .page section .container .content .contentItemTwo .itemTitle {
+    font-size: 3vw;
+  }
+  .page section .container .content .contentItemOne p, .page section .container .content .contentItemTwo p {
+    font-size: 3vw;
+    padding: 0 20px;
+    text-align: center;
+  }
+  .page section .container .content .contentItemOne {
+    order: 1;
+    margin-top: 50px;
+  }
+  .page section .container .content .contentItemTwo {
+    order: 0;
+    width: 70%;
+  }
+  .page section .container .contentHero {
+    flex-flow: row wrap;
+  }
+  .page .scrollButton {
+    font-size: 2vw;
+  }
+  .page button {
+    font-size: 2.5vw;
+  }
+  .page .heroSocials a svg {
+    width: 5vw;
+    height: 5vw;
+  }
+  .page .additionBg {
+    background: url(../img/bg.jpg) center/350% no-repeat;
+  }
+  .page footer {
+    height: 200px;
+  }
+  .page footer .container .heroSocials {
+    flex-flow: row nowrap;
+    width: 100%;
+    justify-content: center;
+  }
+  .page footer .footerLine {
+    display: none;
+  }
+}
+@media screen and (max-width: 425px) {
+  .page .button {
+    font-size: 2vw;
+  }
+  .page section .container .content {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-flow: column nowrap;
+  }
+  .page section .container .content .contentItemOne, .page section .container .content .contentItemTwo {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .page section .container .content .contentItemOne h3, .page section .container .content .contentItemTwo h3 {
+    font-size: 4vw;
+  }
+  .page section .container .content .contentItemOne .itemTitle, .page section .container .content .contentItemTwo .itemTitle {
+    font-size: 3.3vw;
+  }
+  .page section .container .content .contentItemOne p, .page section .container .content .contentItemTwo p {
+    font-size: 4.5vw;
+  }
+  .page section .container .contentHero {
+    flex-flow: row wrap;
+  }
+  .page .scrollButton {
+    bottom: -30%;
+    right: -7%;
+    font-size: 3vw;
+  }
+  .page button {
+    font-size: 2.5vw;
+  }
+  .page .heroSocials a svg {
+    width: 7vw;
+    height: 7vw;
+  }
+  .page footer .container .heroSocials a svg {
+    width: 7.5vw;
+    height: 7.5vw;
+  }
+}

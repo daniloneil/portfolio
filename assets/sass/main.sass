@@ -1,0 +1,541 @@
+@import url(../css/normilize.css)
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Prosto+One&display=swap')
+
+@font-face
+    font-family: 'Monument Extended Ultrabold'
+    src: url(../fonts/MonumentExtended-Ultrabold.woff2)
+@font-face
+    font-family: 'Monument Extended Regular'
+    src: url(../fonts/MonumentExtended-Regular.woff2)
+
+$colorDark: #191818
+$colorMidlle: #5808fb
+$colorLightMidlle: #9929ea
+$colorLight: #fafafa
+$colorFormBg: #313030
+$fontHeroUltrabold: 'Monument Extended Ultrabold'
+$fontHeroRegular: 'Monument Extended Regular'
+$fontPara: 'Prosto One', cursive
+$fontReg: 'Open Sans Condensed', sans-serif
+
+@mixin flexBox()
+    display: flex
+    flex-flow: column nowrap
+    align-items: center
+    justify-content: space-evenly
+
+@mixin psAfterOrBefore()
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    
+
+// preloader
+.preloader 
+    position: fixed
+    z-index: 999999
+    background: $colorDark
+    width: 100%
+    height: 100%
+    visibility: visible
+    transition: 1s all
+    opacity: 1
+    &.success 
+        opacity: 0
+        visibility: hidden
+
+    .loader 
+        text-align: center
+        display: block
+        width: 100%
+        margin: 0 auto
+        position: absolute
+        top: 50%
+        left: 50%
+        margin-right: -50%
+        transform: translate(-50%, -50%)
+
+        .container 
+            justify-content: center
+
+            .loaderContent 
+                .logo 
+                    @include flexBox()
+                    justify-content: center
+                    flex-flow: column nowrap
+                    line-height: 0.85
+                    span
+                        font-family: $fontHeroUltrabold
+                        font-size: 10vw
+                        background: linear-gradient(to left, $colorLightMidlle, $colorMidlle)
+                        -webkit-background-clip: text
+                        -webkit-text-fill-color: transparent
+
+.loaderContent 
+    animation: anim 1.6s ease-out 1s infinite both
+
+@keyframes anim 
+    0% 
+        opacity: 0
+    
+
+    50% 
+        opacity: 1
+    
+
+    100% 
+        opacity: 0
+
+html
+    cursor: none
+
+:root        
+    --xS: 120px
+    --yS: 120px
+    --cSize: 35px
+    --cSizeSmall: 10px
+
+.cursor
+    position: fixed
+    top: 0
+    left: 0
+    width: var(--cSize)
+    height: var(--cSize)
+    background: linear-gradient(-45deg, $colorLightMidlle, $colorMidlle)
+    border-radius: 50%
+    transform: translate(calc(var(--xS) - var(--cSize)/2), calc(var(--yS) - var(--cSize)/2))
+    will-change: transform
+    transform-style: preserve-3d
+    z-index: 99
+    pointer-events: none
+
+.cursorLarge
+    opacity: .5
+    transition: transform 0.1s linear
+
+.cursorSmall
+    width: var(--cSizeSmall)
+    height: var(--cSizeSmall)
+    transform: translate(calc(var(--xS) - var(--cSizeSmall)/2), calc(var(--yS) - var(--cSizeSmall)/2))
+
+body 
+    height: 100%
+    font-family: $fontReg
+    animation: bg 5s linear infinite
+
+.button 
+    padding: 15px 30px
+    background: linear-gradient(to right, $colorMidlle, $colorLightMidlle)
+    color: $colorLight
+    font-size: 1vw
+    font-family: $fontPara
+    border-radius: 5px
+    text-align: center
+    transform: skew(-21deg)
+    transition: all 0.3s ease
+    background-size: 150% auto
+    span 
+        display: inline-block
+        transform: skew(21deg)
+    &:hover
+        background-position: right
+        box-shadow: 0 0 10px $colorMidlle 
+    &:active
+        background: $colorLight
+        color: $colorDark
+        box-shadow: 0 0 10px $colorLight       
+
+.sectionOne, .sectionTwo
+    .container
+        .content
+            .contentItemOne
+                h3
+                    color: $colorDark
+                    font-size: 1.95vw
+                    span 
+                        background: linear-gradient(to left, $colorLightMidlle, $colorMidlle)
+                        -webkit-background-clip: text
+                        -webkit-text-fill-color: transparent
+                .itemTitle
+                        font-size: 1.5vw
+                p
+                    color: $colorDark
+                    font-family: $fontReg
+                    font-size: 1.5vw
+
+section 
+    position: relative
+    min-height: 100vh
+    width: 100%
+    position: relative
+    background: $colorDark
+    @include flexBox()
+    .container
+        .content
+            @include flexBox()
+            flex-flow: row nowrap
+            
+            .contentItemOne, .contentItemTwo
+                width: 45%
+                @include flexBox()
+            .contentItemTwo
+                z-index: 2
+                border-radius: 5px
+                img
+                    transition: all .5s ease
+                    box-shadow: 0 0 20px $colorDark
+                    position: relative
+                    display: block
+                    border-radius: 5px
+                    &:hover
+                        box-shadow: 0 0 30px $colorDark
+                
+// scroll
+::-webkit-scrollbar 
+    display: none
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.button 
+   font-family: $fontPara   
+
+// slider
+.fadeSlider
+    width: 45%
+    z-index: 999
+    position: absolute
+    top: 50%
+    left: 40%
+    display: flex
+    align-items: center
+
+    .sliderItem
+        position: absolute
+        opacity: 0
+        display: flex
+        flex-flow: row wrap
+        justify-content: center
+        font-family: $fontHeroRegular
+        font-size: 10vw
+        width: inherit
+        transition: all 0.2s ease-out
+        color: $colorLight
+        span
+            text-shadow: 1px 1px 16px rgba(255,255,255,0.75)
+            letter-spacing: 3px
+
+        &.visibleItem
+            opacity: 1
+    
+// customShape
+.customShapeBottom
+    opacity: 0 
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    overflow: hidden
+    line-height: 0
+    transform: rotate(180deg)
+    transition: .3s
+    z-index: 7
+    svg 
+        position: relative
+        display: block
+        width: calc(100% + 1.3px)
+        height: 60px
+        transform: rotateY(180deg)
+        box-shadow: 0 0 20px $colorDark
+
+.customShapeTop
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    overflow: hidden
+    line-height: 0
+    z-index: 11
+    svg 
+        position: relative
+        display: block
+        width: calc(100% + 1.3px)
+        height: 60px
+        transform: rotateY(180deg)
+        box-shadow: 0 0 20px $colorDark
+
+.customShapeBottomReverse
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    overflow: hidden
+    line-height: 0
+    transform: rotate(180deg)
+    z-index: 13
+    svg 
+        position: relative
+        display: block
+        width: calc(100% + 1.3px)
+        height: 60px
+
+.customShapeTopReverse
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    overflow: hidden
+    line-height: 0
+    z-index: 12
+    svg 
+        position: relative
+        display: block
+        width: calc(100% + 1.3px)
+        height: 60px
+
+.shapeFill 
+    fill: $colorDark
+
+.activeSkew
+    opacity: 1
+
+// animShow
+.animShowLeft 
+    transform: translateX(-120%)
+    opacity: 0
+    transition: all 1s ease
+
+    &.activeAnim,
+    .activeAnim & 
+        transform: translateX(0)
+        opacity: 1
+
+.animShowRight 
+    transform: translateX(120%)
+    opacity: 0
+    transition: all 1s ease
+
+    &.activeAnim,
+    .activeAnim & 
+        transform: translateX(0)
+        opacity: 1
+
+.animShowScale 
+    transform: scale(0)
+    opacity: 0
+    transition: all 1s ease
+
+    &.activeAnim,
+    .activeAnim & 
+        transform: scale(1)
+        opacity: 1
+    
+.animShowTop 
+    transform: translateY(-120%)
+    opacity: 0
+    transition: all 1s ease
+
+    &.activeAnim,
+    .activeAnim & 
+        transform: translateY(0)
+        opacity: 1
+
+.animShowBottom 
+    transform: translateY(120%)
+    opacity: 0
+    transition: all 1s ease
+
+    &.activeAnim,
+    .activeAnim & 
+        transform: translateY(0)
+        opacity: 1
+
+.sectionOne
+    background: url(../img/bgOne.jpg) center no-repeat
+    position: relative
+    &::after
+        @include psAfterOrBefore()
+        background: #fff
+        opacity: 0.9
+        z-index: 5
+    .container
+        z-index: 10
+        .contentHero
+            flex-flow: row wrap
+            user-select: none
+            .heroTitle
+                position: relative
+                font-family: $fontHeroUltrabold
+                font-size: 18vw
+                width: 100%
+                color: $colorDark
+                z-index: 4
+                text-align: center
+                line-height: 0.8
+                letter-spacing: 5px
+                text-shadow: 1px 1px 16px rgba(0,0,0,0.6)
+            
+    .scrollButton
+        position: absolute
+        bottom: -33%
+        right: -3%
+        height: 100%
+        transform: rotate(90deg)
+        font-family: $fontPara
+        font-size: 1vw
+        z-index: 100
+        @include flexBox()
+        .scrollTo
+            color: $colorLight
+            transition: all .3s ease
+            &:hover
+                color: $colorDark
+
+.additionBg
+    // background: linear-gradient(-45deg, $colorLightMidlle, $colorMidlle)
+    background: url(../img/bg.jpg) center no-repeat
+    &::after
+        @include psAfterOrBefore()
+        background: linear-gradient(-45deg, $colorLightMidlle, $colorMidlle)
+        opacity: 0.7
+        z-index: 5
+
+.sectionTwo 
+    background: $colorDark
+    z-index: 1
+    .container
+        .content
+            flex-flow: row-reverse nowrap
+            .contentItemOne
+                h3, p
+                    color: $colorLight
+            .contentItemTwo
+                img
+                    box-shadow: 0 0 10px $colorLight
+                    &:hover
+                        box-shadow: 0 0 20px $colorLight
+
+footer
+    height: 250px
+    width: 100%
+    .container
+        display: flex
+        flex-flow: row nowrap
+        align-items: center
+        justify-content: space-between
+        .heroSocials
+            width: 30%
+            z-index: 99
+            @include flexBox()
+            flex-flow: row nowrap
+            a
+                padding: 10px
+                svg 
+                    fill: $colorLight
+                    width: 1.5vw
+                    height: 1.5vw
+                    transition: 0.3s ease
+                    &:hover
+                        transform: scale(1.2)
+                        fill: $colorDark    
+        .footerLine
+            width: 70%
+            height: 2px
+            position: relative
+            right: -5%
+            background: $colorLight    
+
+@media screen and ( max-width: 768px)
+    .page
+        section 
+            .container
+                .content
+                    @include flexBox()
+                    flex-flow: column nowrap
+
+                    .contentItemOne, .contentItemTwo
+                        width: 100%
+                        @include flexBox()
+                        h3
+                            font-size: 3.5vw
+                        .itemTitle
+                            font-size: 3vw
+                        p
+                            font-size: 3vw
+                            padding: 0 20px
+                            text-align: center
+                    .contentItemOne
+                        order: 1
+                        margin-top: 50px
+                    .contentItemTwo
+                        order: 0
+                        width: 70%
+                .contentHero
+                    flex-flow: row wrap
+        .scrollButton
+            font-size: 2vw
+        button
+            font-size: 2.5vw
+        .heroSocials
+            a
+                svg
+                    width: 5vw
+                    height: 5vw
+        .additionBg
+            background: url(../img/bg.jpg) center / 350% no-repeat
+        footer 
+            height: 200px
+            .container 
+                .heroSocials
+                    flex-flow: row nowrap
+                    width: 100%
+                    justify-content: center
+            .footerLine
+                display: none
+
+@media screen and ( max-width: 425px)
+    .page
+        .button
+            font-size: 2vw
+
+        section 
+            .container
+                .content
+                    @include flexBox()
+                    flex-flow: column nowrap
+                
+                    .contentItemOne, .contentItemTwo
+                        width: 100%
+                        @include flexBox()
+                        h3
+                            font-size: 4vw
+                        .itemTitle
+                            font-size: 3.3vw
+                        p
+                            font-size: 4.5vw
+                .contentHero
+                    flex-flow: row wrap
+        .scrollButton
+            bottom: -30%
+            right: -7%
+            font-size: 3vw
+        button
+            font-size: 2.5vw
+        .heroSocials
+            a
+                svg
+                    width: 7vw
+                    height: 7vw
+        footer 
+            .container 
+                .heroSocials
+                    a
+                        svg
+                            width: 7.5vw
+                            height: 7.5vw
