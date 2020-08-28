@@ -498,9 +498,10 @@ footer .container .footerLine {
 }
 
 @media screen and (max-width: 768px) {
-  .page .cursors {
+  .cursors {
     display: none;
   }
+
   .page section .container .content {
     display: flex;
     flex-flow: column nowrap;
@@ -563,6 +564,9 @@ footer .container .footerLine {
   }
 }
 @media screen and (max-width: 425px) {
+  .page .cursor {
+    display: none;
+  }
   .page .button {
     font-size: 2vw;
   }
