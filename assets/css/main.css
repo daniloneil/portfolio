@@ -137,64 +137,6 @@ body {
   box-shadow: 0 0 10px #fafafa;
 }
 
-.sectionOne .container .content .contentItemOne h3, .sectionTwo .container .content .contentItemOne h3 {
-  color: #191818;
-  font-size: 1.95vw;
-}
-.sectionOne .container .content .contentItemOne h3 span, .sectionTwo .container .content .contentItemOne h3 span {
-  background: linear-gradient(to left, #9929ea, #5808fb);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.sectionOne .container .content .contentItemOne .itemTitle, .sectionTwo .container .content .contentItemOne .itemTitle {
-  font-size: 1.5vw;
-}
-.sectionOne .container .content .contentItemOne p, .sectionTwo .container .content .contentItemOne p {
-  color: #191818;
-  font-family: "Open Sans Condensed", sans-serif;
-  font-size: 1.5vw;
-}
-
-section {
-  position: relative;
-  min-height: 100vh;
-  width: 100%;
-  position: relative;
-  background: #191818;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: space-evenly;
-}
-section .container .content {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-flow: row nowrap;
-}
-section .container .content .contentItemOne, section .container .content .contentItemTwo {
-  width: 45%;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: space-evenly;
-}
-section .container .content .contentItemTwo {
-  z-index: 2;
-  border-radius: 5px;
-}
-section .container .content .contentItemTwo img {
-  transition: all 0.5s ease;
-  box-shadow: 0 0 20px #191818;
-  position: relative;
-  display: block;
-  border-radius: 5px;
-}
-section .container .content .contentItemTwo img:hover {
-  box-shadow: 0 0 30px #191818;
-}
-
 ::-webkit-scrollbar {
   display: none;
 }
@@ -368,6 +310,64 @@ h6,
   opacity: 1;
 }
 
+.sectionOne .container .content .contentItemOne h3, .sectionTwo .container .content .contentItemOne h3 {
+  color: #191818;
+  font-size: 1.95vw;
+}
+.sectionOne .container .content .contentItemOne h3 span, .sectionTwo .container .content .contentItemOne h3 span {
+  background: linear-gradient(to left, #9929ea, #5808fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sectionOne .container .content .contentItemOne .itemTitle, .sectionTwo .container .content .contentItemOne .itemTitle {
+  font-size: 1.5vw;
+}
+.sectionOne .container .content .contentItemOne p, .sectionTwo .container .content .contentItemOne p {
+  color: #191818;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 1.5vw;
+}
+
+section {
+  position: relative;
+  min-height: 100%;
+  width: 100%;
+  position: relative;
+  background: #191818;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+section .container .content {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-flow: row nowrap;
+}
+section .container .content .contentItemOne, section .container .content .contentItemTwo {
+  width: 45%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+section .container .content .contentItemTwo {
+  z-index: 2;
+  border-radius: 5px;
+}
+section .container .content .contentItemTwo img {
+  transition: all 0.5s ease;
+  box-shadow: 0 0 20px #191818;
+  position: relative;
+  display: block;
+  border-radius: 5px;
+}
+section .container .content .contentItemTwo img:hover {
+  box-shadow: 0 0 30px #191818;
+}
+
 .sectionOne {
   background: url(../img/bgOne.jpg) center no-repeat;
   position: relative;
@@ -401,7 +401,7 @@ h6,
   text-align: center;
   line-height: 0.8;
   letter-spacing: 5px;
-  text-shadow: 1px 1px 16px rgba(0, 0, 0, 0.6);
+  text-shadow: 1px 1px 7px rgba(0, 0, 0, 0.5);
 }
 .sectionOne .scrollButton {
   position: absolute;
@@ -423,6 +423,10 @@ h6,
 }
 .sectionOne .scrollButton .scrollTo:hover {
   color: #191818;
+}
+
+#sectionHero {
+  height: 100vh;
 }
 
 .additionBg {
@@ -466,6 +470,7 @@ footer .container {
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
+  padding: 100px 20px;
 }
 footer .container .heroSocials {
   width: 30%;
@@ -564,11 +569,11 @@ footer .container .footerLine {
   }
 }
 @media screen and (max-width: 425px) {
-  .page .cursor {
-    display: none;
-  }
   .page .button {
     font-size: 2vw;
+  }
+  .page section .container {
+    padding: 150px 20px;
   }
   .page section .container .content {
     display: flex;
@@ -585,7 +590,7 @@ footer .container .footerLine {
     justify-content: space-evenly;
   }
   .page section .container .content .contentItemOne h3, .page section .container .content .contentItemTwo h3 {
-    font-size: 4vw;
+    font-size: 3.5vw;
   }
   .page section .container .content .contentItemOne .itemTitle, .page section .container .content .contentItemTwo .itemTitle {
     font-size: 3.3vw;

@@ -92,6 +92,7 @@ $fontReg: 'Open Sans Condensed', sans-serif
 html
     cursor: none
 
+// castomCursor
 :root        
     --xS: 120px
     --yS: 120px
@@ -147,51 +148,6 @@ body
         background: $colorLight
         color: $colorDark
         box-shadow: 0 0 10px $colorLight       
-
-.sectionOne, .sectionTwo
-    .container
-        .content
-            .contentItemOne
-                h3
-                    color: $colorDark
-                    font-size: 1.95vw
-                    span 
-                        background: linear-gradient(to left, $colorLightMidlle, $colorMidlle)
-                        -webkit-background-clip: text
-                        -webkit-text-fill-color: transparent
-                .itemTitle
-                        font-size: 1.5vw
-                p
-                    color: $colorDark
-                    font-family: $fontReg
-                    font-size: 1.5vw
-
-section 
-    position: relative
-    min-height: 100vh
-    width: 100%
-    position: relative
-    background: $colorDark
-    @include flexBox()
-    .container
-        .content
-            @include flexBox()
-            flex-flow: row nowrap
-            
-            .contentItemOne, .contentItemTwo
-                width: 45%
-                @include flexBox()
-            .contentItemTwo
-                z-index: 2
-                border-radius: 5px
-                img
-                    transition: all .5s ease
-                    box-shadow: 0 0 20px $colorDark
-                    position: relative
-                    display: block
-                    border-radius: 5px
-                    &:hover
-                        box-shadow: 0 0 30px $colorDark
                 
 // scroll
 ::-webkit-scrollbar 
@@ -356,6 +312,52 @@ h6,
         transform: translateY(0)
         opacity: 1
 
+// sections
+.sectionOne, .sectionTwo
+    .container
+        .content
+            .contentItemOne
+                h3
+                    color: $colorDark
+                    font-size: 1.95vw
+                    span 
+                        background: linear-gradient(to left, $colorLightMidlle, $colorMidlle)
+                        -webkit-background-clip: text
+                        -webkit-text-fill-color: transparent
+                .itemTitle
+                        font-size: 1.5vw
+                p
+                    color: $colorDark
+                    font-family: $fontReg
+                    font-size: 1.5vw
+
+section 
+    position: relative
+    min-height: 100%
+    width: 100%
+    position: relative
+    background: $colorDark
+    @include flexBox()
+    .container
+        .content
+            @include flexBox()
+            flex-flow: row nowrap
+            
+            .contentItemOne, .contentItemTwo
+                width: 45%
+                @include flexBox()
+            .contentItemTwo
+                z-index: 2
+                border-radius: 5px
+                img
+                    transition: all .5s ease
+                    box-shadow: 0 0 20px $colorDark
+                    position: relative
+                    display: block
+                    border-radius: 5px
+                    &:hover
+                        box-shadow: 0 0 30px $colorDark
+
 .sectionOne
     background: url(../img/bgOne.jpg) center no-repeat
     position: relative
@@ -379,7 +381,7 @@ h6,
                 text-align: center
                 line-height: 0.8
                 letter-spacing: 5px
-                text-shadow: 1px 1px 16px rgba(0,0,0,0.6)
+                text-shadow: 1px 1px 7px rgba(0,0,0,0.5)
             
     .scrollButton
         position: absolute
@@ -396,6 +398,8 @@ h6,
             transition: all .3s ease
             &:hover
                 color: $colorDark
+#sectionHero
+    height: 100vh
 
 .additionBg
     // background: linear-gradient(-45deg, $colorLightMidlle, $colorMidlle)
@@ -429,6 +433,7 @@ footer
         flex-flow: row nowrap
         align-items: center
         justify-content: space-between
+        padding: 100px 20px
         .heroSocials
             width: 30%
             z-index: 99
@@ -452,6 +457,8 @@ footer
             background: $colorLight    
 
 @media screen and ( max-width: 768px)
+    .cursors
+        display: none
     .page
         section 
             .container
@@ -506,6 +513,7 @@ footer
 
         section 
             .container
+                padding: 150px 20px
                 .content
                     @include flexBox()
                     flex-flow: column nowrap
@@ -514,7 +522,7 @@ footer
                         width: 100%
                         @include flexBox()
                         h3
-                            font-size: 4vw
+                            font-size: 3.5vw
                         .itemTitle
                             font-size: 3.3vw
                         p
