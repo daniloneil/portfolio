@@ -498,6 +498,9 @@ footer .container .footerLine {
 }
 
 @media screen and (max-width: 768px) {
+  .page .cursors {
+    display: none;
+  }
   .page section .container .content {
     display: flex;
     flex-flow: column nowrap;
