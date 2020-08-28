@@ -40,7 +40,7 @@
 
 // activeSkew
 (function () {
-    var headerPage = document.querySelector('.customShapeBottom');
+    var headerPage = document.querySelector('.customShapeBottomReverse');
 
     window.addEventListener('scroll', function () {
         if (window.pageYOffset > 0) {
