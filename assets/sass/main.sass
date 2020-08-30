@@ -32,7 +32,6 @@ $fontReg: 'Open Sans Condensed', sans-serif
     width: 100%
     height: 100%
     
-
 // preloader
 .preloader 
     position: fixed
@@ -341,7 +340,32 @@ h6,
 
     100%
         transform: scale(1.2) translateY(-250px) rotate(360deg)
-        
+
+// circle
+.circle
+    margin: 0 auto
+    height: 100%
+    position: absolute
+    top: -30%
+    left: 0
+    svg 
+        animation: rotate 10s linear infinite
+        width: 30vw
+        height: 30vw
+        position: absolute
+        top: calc(50% - 15vw)
+        left: calc(50% - 15vw)
+        overflow: hidden
+    .circleText 
+        font: 100px/100px $fontHeroRegular
+        letter-spacing: 20.5px
+        width: 100%
+        fill: $colorLight
+     
+@keyframes rotate 
+  to 
+    transform: rotate(360deg)
+
 // sections
 .sectionOne, .sectionTwo
     z-index: 13
@@ -382,12 +406,12 @@ section
                 border-radius: 5px
                 img
                     transition: all .5s ease
-                    box-shadow: 0 5px 20px $colorLight
+                    box-shadow: 0 3px 10px $colorLight
                     position: relative
                     display: block
                     border-radius: 5px
                     &:hover
-                        box-shadow: 0 5px 30px $colorLight
+                        box-shadow: 0 3px 20px $colorLight
 
 .sectionOne
     position: relative
@@ -422,7 +446,9 @@ section
             color: $colorLight
             transition: all .3s ease
             &:hover
-                color: $colorDark
+                background: linear-gradient(to left, $colorLightMidlle, $colorMidlle)
+                -webkit-background-clip: text
+                -webkit-text-fill-color: transparent
                 
 #sectionHero
     height: 100vh
@@ -501,17 +527,16 @@ footer
             font-size: 2vw
         button
             font-size: 2.5vw
-        .heroSocials
-            a
-                svg
-                    width: 5vw
-                    height: 5vw
         footer 
             .container 
                 .heroSocials
                     flex-flow: row nowrap
                     width: 100%
                     justify-content: center
+                    svg
+                        width: 3.5vw
+                        height: 3.5vw
+
             .footerLine
                 display: none
 

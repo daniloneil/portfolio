@@ -335,6 +335,34 @@ h6,
     transform: scale(1.2) translateY(-250px) rotate(360deg);
   }
 }
+.circle {
+  margin: 0 auto;
+  height: 100%;
+  position: absolute;
+  top: -30%;
+  left: 0;
+}
+.circle svg {
+  animation: rotate 10s linear infinite;
+  width: 30vw;
+  height: 30vw;
+  position: absolute;
+  top: calc(50% - 15vw);
+  left: calc(50% - 15vw);
+  overflow: hidden;
+}
+.circle .circleText {
+  font: 100px/100px "Monument Extended Regular";
+  letter-spacing: 20.5px;
+  width: 100%;
+  fill: #fafafa;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
 .sectionOne, .sectionTwo {
   z-index: 13;
   overflow: hidden;
@@ -387,13 +415,13 @@ section .container .content .contentItemTwo {
 }
 section .container .content .contentItemTwo img {
   transition: all 0.5s ease;
-  box-shadow: 0 5px 20px #fafafa;
+  box-shadow: 0 3px 10px #fafafa;
   position: relative;
   display: block;
   border-radius: 5px;
 }
 section .container .content .contentItemTwo img:hover {
-  box-shadow: 0 5px 30px #fafafa;
+  box-shadow: 0 3px 20px #fafafa;
 }
 
 .sectionOne {
@@ -438,7 +466,9 @@ section .container .content .contentItemTwo img:hover {
   transition: all 0.3s ease;
 }
 .sectionOne .scrollButton .scrollTo:hover {
-  color: #191818;
+  background: linear-gradient(to left, #9929ea, #5808fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #sectionHero {
@@ -538,14 +568,14 @@ footer .container .footerLine {
   .page button {
     font-size: 2.5vw;
   }
-  .page .heroSocials a svg {
-    width: 5vw;
-    height: 5vw;
-  }
   .page footer .container .heroSocials {
     flex-flow: row nowrap;
     width: 100%;
     justify-content: center;
+  }
+  .page footer .container .heroSocials svg {
+    width: 3.5vw;
+    height: 3.5vw;
   }
   .page footer .footerLine {
     display: none;
