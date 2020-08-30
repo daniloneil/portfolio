@@ -230,6 +230,111 @@ h6,
   opacity: 1;
 }
 
+.animBg {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  filter: blur(5px);
+}
+.animBg div {
+  width: 100px;
+  height: 60px;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  animation: animFigureBg 4s linear infinite;
+  background: linear-gradient(180deg, #9929ea, #5808fb);
+  border-radius: 15px;
+}
+.animBg div::before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 25px solid #9929ea;
+}
+.animBg div::after {
+  content: "";
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 25px solid #5808fb;
+}
+.animBg div:nth-child(1) {
+  top: 20%;
+  left: 20%;
+  animation: animFigureBg 8s linear infinite;
+}
+.animBg div:nth-child(2) {
+  top: 26%;
+  left: 89%;
+  animation: animFigureBg 10s linear infinite;
+}
+.animBg div:nth-child(3) {
+  top: 80%;
+  left: 90%;
+  animation: animFigureBg 5s linear infinite;
+}
+.animBg div:nth-child(4) {
+  top: 65%;
+  left: 75%;
+  animation: animFigureBg 7s linear infinite;
+}
+.animBg div:nth-child(5) {
+  top: 90%;
+  left: 10%;
+  animation: animFigureBg 9s linear infinite;
+}
+.animBg div:nth-child(6) {
+  top: 30%;
+  left: 60%;
+  animation: animFigureBg 5s linear infinite;
+}
+.animBg div:nth-child(7) {
+  top: 70%;
+  left: 33%;
+  animation: animFigureBg 8s linear infinite;
+}
+.animBg div:nth-child(8) {
+  top: 75%;
+  left: 60%;
+  animation: animFigureBg 10s linear infinite;
+}
+.animBg div:nth-child(9) {
+  top: 23%;
+  left: 50%;
+  animation: animFigureBg 6s linear infinite;
+}
+.animBg div:nth-child(10) {
+  top: 35%;
+  left: 7%;
+  animation: animFigureBg 10s linear infinite;
+}
+
+.animBgSec {
+  height: 100%;
+  z-index: 9;
+}
+
+@keyframes animFigureBg {
+  0% {
+    transform: scale(0) translateY(0) rotate(50deg);
+  }
+  100% {
+    transform: scale(1.2) translateY(-250px) rotate(360deg);
+  }
+}
 .sectionOne, .sectionTwo {
   z-index: 13;
   overflow: hidden;
@@ -340,111 +445,6 @@ section .container .content .contentItemTwo img:hover {
   height: 100vh;
 }
 
-.animBg {
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
-}
-.animBg div {
-  width: 100px;
-  height: 60px;
-  position: absolute;
-  top: 10%;
-  left: 10%;
-  animation: animFigureBg 4s linear infinite;
-  background: linear-gradient(180deg, #9929ea, #5808fb);
-  border-radius: 15px;
-  filter: blur(5px);
-}
-.animBg div::before {
-  content: "";
-  position: absolute;
-  top: -25px;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-left: 50px solid transparent;
-  border-right: 50px solid transparent;
-  border-bottom: 25px solid #9929ea;
-}
-.animBg div::after {
-  content: "";
-  position: absolute;
-  bottom: -25px;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-left: 50px solid transparent;
-  border-right: 50px solid transparent;
-  border-top: 25px solid #5808fb;
-}
-.animBg div:nth-child(1) {
-  top: 20%;
-  left: 20%;
-  animation: animFigureBg 8s linear infinite;
-}
-.animBg div:nth-child(2) {
-  top: 26%;
-  left: 89%;
-  animation: animFigureBg 10s linear infinite;
-}
-.animBg div:nth-child(3) {
-  top: 80%;
-  left: 90%;
-  animation: animFigureBg 5s linear infinite;
-}
-.animBg div:nth-child(4) {
-  top: 65%;
-  left: 75%;
-  animation: animFigureBg 7s linear infinite;
-}
-.animBg div:nth-child(5) {
-  top: 90%;
-  left: 10%;
-  animation: animFigureBg 9s linear infinite;
-}
-.animBg div:nth-child(6) {
-  top: 30%;
-  left: 60%;
-  animation: animFigureBg 5s linear infinite;
-}
-.animBg div:nth-child(7) {
-  top: 70%;
-  left: 33%;
-  animation: animFigureBg 8s linear infinite;
-}
-.animBg div:nth-child(8) {
-  top: 75%;
-  left: 60%;
-  animation: animFigureBg 10s linear infinite;
-}
-.animBg div:nth-child(9) {
-  top: 23%;
-  left: 50%;
-  animation: animFigureBg 6s linear infinite;
-}
-.animBg div:nth-child(10) {
-  top: 35%;
-  left: 7%;
-  animation: animFigureBg 10s linear infinite;
-}
-
-.animBgSec {
-  height: 100%;
-  z-index: 9;
-}
-
-@keyframes animFigureBg {
-  0% {
-    transform: scale(0) translateY(0) rotate(50deg);
-  }
-  100% {
-    transform: scale(1.2) translateY(-250px) rotate(360deg);
-  }
-}
 .sectionTwo {
   box-shadow: 0 0 10px #000;
 }
