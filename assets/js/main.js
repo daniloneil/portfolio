@@ -39,18 +39,18 @@
 })();
 
 // activeSkew
-(function () {
-    var headerPage = document.querySelector('.customShapeBottomReverse');
+// (function () {
+//     var headerPage = document.querySelector('.customShapeBottomReverse');
 
-    window.addEventListener('scroll', function () {
-        if (window.pageYOffset > 0) {
-            headerPage.classList.add('activeSkew');
-        } else {
-            headerPage.classList.remove('activeSkew')
-        }
-    })
+//     window.addEventListener('scroll', function () {
+//         if (window.pageYOffset > 0) {
+//             headerPage.classList.add('activeSkew');
+//         } else {
+//             headerPage.classList.remove('activeSkew')
+//         }
+//     })
 
-})();
+// })();
 
 // animate
 (function () {

@@ -108,7 +108,7 @@ html {
 body {
   height: 100%;
   font-family: "Open Sans Condensed", sans-serif;
-  animation: bg 5s linear infinite;
+  background: #191818;
 }
 
 .button {
@@ -119,8 +119,8 @@ body {
   font-family: "Prosto One", cursive;
   border-radius: 5px;
   text-align: center;
-  transform: skew(-21deg);
   transition: all 0.3s ease;
+  transform: skew(-21deg);
   background-size: 150% auto;
 }
 .button span {
@@ -180,86 +180,6 @@ h6,
   opacity: 1;
 }
 
-.customShapeBottom {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
-  transition: 0.5s;
-  z-index: 7;
-}
-.customShapeBottom svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 60px;
-  box-shadow: 0 0 20px #191818;
-}
-
-.customShapeTop {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  z-index: 11;
-}
-.customShapeTop svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 60px;
-  transform: rotateY(180deg);
-  box-shadow: 0 0 20px #191818;
-}
-
-.customShapeBottomReverse {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
-  z-index: 13;
-  transition: 0.3s;
-  opacity: 0;
-}
-.customShapeBottomReverse svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 60px;
-}
-
-.customShapeTopReverse {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  z-index: 12;
-}
-.customShapeTopReverse svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 60px;
-}
-
-.shapeFill {
-  fill: #191818;
-}
-
-.activeSkew {
-  opacity: 1;
-}
-
 .animShowLeft {
   transform: translateX(-120%);
   opacity: 0;
@@ -310,8 +230,12 @@ h6,
   opacity: 1;
 }
 
+.sectionOne, .sectionTwo {
+  z-index: 13;
+  overflow: hidden;
+}
 .sectionOne .container .content .contentItemOne h3, .sectionTwo .container .content .contentItemOne h3 {
-  color: #191818;
+  color: #fafafa;
   font-size: 1.95vw;
 }
 .sectionOne .container .content .contentItemOne h3 span, .sectionTwo .container .content .contentItemOne h3 span {
@@ -323,7 +247,7 @@ h6,
   font-size: 1.5vw;
 }
 .sectionOne .container .content .contentItemOne p, .sectionTwo .container .content .contentItemOne p {
-  color: #191818;
+  color: #fafafa;
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 1.5vw;
 }
@@ -333,7 +257,6 @@ section {
   min-height: 100%;
   width: 100%;
   position: relative;
-  background: #191818;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -359,29 +282,17 @@ section .container .content .contentItemTwo {
 }
 section .container .content .contentItemTwo img {
   transition: all 0.5s ease;
-  box-shadow: 0 0 20px #191818;
+  box-shadow: 0 5px 20px #fafafa;
   position: relative;
   display: block;
   border-radius: 5px;
 }
 section .container .content .contentItemTwo img:hover {
-  box-shadow: 0 0 30px #191818;
+  box-shadow: 0 5px 30px #fafafa;
 }
 
 .sectionOne {
-  background: url(../img/bgOne.jpg) center no-repeat;
   position: relative;
-}
-.sectionOne::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #fff;
-  opacity: 0.9;
-  z-index: 5;
 }
 .sectionOne .container {
   z-index: 10;
@@ -393,7 +304,7 @@ section .container .content .contentItemTwo img:hover {
 }
 .sectionOne .container .contentHero .heroTitle {
   position: relative;
-  font-family: "Monument Extended Ultrabold";
+  font-family: "Monument Extended Regular";
   font-size: 18vw;
   width: 100%;
   color: #191818;
@@ -429,38 +340,117 @@ section .container .content .contentItemTwo img:hover {
   height: 100vh;
 }
 
-.additionBg {
-  background: url(../img/bg.jpg) center no-repeat;
-}
-.additionBg::after {
-  content: "";
+.animBg {
+  width: 100%;
+  height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(-45deg, #9929ea, #5808fb);
-  opacity: 0.7;
-  z-index: 5;
+  z-index: 10;
+}
+.animBg div {
+  width: 100px;
+  height: 60px;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  animation: animFigureBg 4s linear infinite;
+  background: linear-gradient(180deg, #9929ea, #5808fb);
+  border-radius: 15px;
+  filter: blur(5px);
+}
+.animBg div::before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 25px solid #9929ea;
+}
+.animBg div::after {
+  content: "";
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 25px solid #5808fb;
+}
+.animBg div:nth-child(1) {
+  top: 20%;
+  left: 20%;
+  animation: animFigureBg 8s linear infinite;
+}
+.animBg div:nth-child(2) {
+  top: 26%;
+  left: 89%;
+  animation: animFigureBg 10s linear infinite;
+}
+.animBg div:nth-child(3) {
+  top: 80%;
+  left: 90%;
+  animation: animFigureBg 5s linear infinite;
+}
+.animBg div:nth-child(4) {
+  top: 65%;
+  left: 75%;
+  animation: animFigureBg 7s linear infinite;
+}
+.animBg div:nth-child(5) {
+  top: 90%;
+  left: 10%;
+  animation: animFigureBg 9s linear infinite;
+}
+.animBg div:nth-child(6) {
+  top: 30%;
+  left: 60%;
+  animation: animFigureBg 5s linear infinite;
+}
+.animBg div:nth-child(7) {
+  top: 70%;
+  left: 33%;
+  animation: animFigureBg 8s linear infinite;
+}
+.animBg div:nth-child(8) {
+  top: 75%;
+  left: 60%;
+  animation: animFigureBg 10s linear infinite;
+}
+.animBg div:nth-child(9) {
+  top: 23%;
+  left: 50%;
+  animation: animFigureBg 6s linear infinite;
+}
+.animBg div:nth-child(10) {
+  top: 35%;
+  left: 7%;
+  animation: animFigureBg 10s linear infinite;
 }
 
+.animBgSec {
+  height: 100%;
+  z-index: 9;
+}
+
+@keyframes animFigureBg {
+  0% {
+    transform: scale(0) translateY(0) rotate(50deg);
+  }
+  100% {
+    transform: scale(1.2) translateY(-250px) rotate(360deg);
+  }
+}
 .sectionTwo {
-  background: #191818;
-  z-index: 1;
+  box-shadow: 0 0 10px #000;
 }
 .sectionTwo .container .content {
   flex-flow: row-reverse nowrap;
 }
-.sectionTwo .container .content .contentItemOne h3, .sectionTwo .container .content .contentItemOne p {
-  color: #fafafa;
-}
-.sectionTwo .container .content .contentItemTwo img {
-  box-shadow: 0 0 10px #fafafa;
-}
-.sectionTwo .container .content .contentItemTwo img:hover {
-  box-shadow: 0 0 20px #fafafa;
-}
-
 footer {
   width: 100%;
 }
@@ -491,7 +481,7 @@ footer .container .heroSocials a svg {
 }
 footer .container .heroSocials a svg:hover {
   transform: scale(1.2);
-  fill: #191818;
+  fill: #9929ea;
 }
 footer .container .footerLine {
   width: 70%;
@@ -548,15 +538,9 @@ footer .container .footerLine {
   .page button {
     font-size: 2.5vw;
   }
-  .page .sectionOne {
-    background: url(../img/bg.jpg) center/300% no-repeat;
-  }
   .page .heroSocials a svg {
     width: 5vw;
     height: 5vw;
-  }
-  .page .additionBg {
-    background: url(../img/bg.jpg) center/350% no-repeat;
   }
   .page footer .container .heroSocials {
     flex-flow: row nowrap;
@@ -613,7 +597,7 @@ footer .container .footerLine {
     height: 7vw;
   }
   .page footer .container {
-    padding: 100px 0px 50px;
+    padding: 50px 0px;
   }
   .page footer .container .heroSocials a svg {
     width: 7.5vw;

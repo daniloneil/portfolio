@@ -125,7 +125,7 @@ html
 body 
     height: 100%
     font-family: $fontReg
-    animation: bg 5s linear infinite
+    background: $colorDark
 
 .button 
     padding: 15px 30px
@@ -135,8 +135,8 @@ body
     font-family: $fontPara
     border-radius: 5px
     text-align: center
-    transform: skew(-21deg)
     transition: all 0.3s ease
+    transform: skew(-21deg)
     background-size: 150% auto
     span 
         display: inline-block
@@ -190,77 +190,6 @@ h6,
         &.visibleItem
             opacity: 1
     
-// customShape
-.customShapeBottom
-    position: absolute
-    bottom: 0
-    left: 0
-    width: 100%
-    overflow: hidden
-    line-height: 0
-    transform: rotate(180deg)
-    transition: .5s
-    z-index: 7
-    svg 
-        position: relative
-        display: block
-        width: calc(100% + 1.3px)
-        height: 60px
-        box-shadow: 0 0 20px $colorDark
-
-.customShapeTop
-    position: absolute
-    top: 0
-    left: 0
-    width: 100%
-    overflow: hidden
-    line-height: 0
-    z-index: 11
-    svg 
-        position: relative
-        display: block
-        width: calc(100% + 1.3px)
-        height: 60px
-        transform: rotateY(180deg)
-        box-shadow: 0 0 20px $colorDark
-
-.customShapeBottomReverse
-    position: absolute
-    bottom: 0
-    left: 0
-    width: 100%
-    overflow: hidden
-    line-height: 0
-    transform: rotate(180deg)
-    z-index: 13
-    transition: .3s
-    opacity: 0
-    svg 
-        position: relative
-        display: block
-        width: calc(100% + 1.3px)
-        height: 60px
-
-.customShapeTopReverse
-    position: absolute
-    top: 0
-    left: 0
-    width: 100%
-    overflow: hidden
-    line-height: 0
-    z-index: 12
-    svg 
-        position: relative
-        display: block
-        width: calc(100% + 1.3px)
-        height: 60px
-
-.shapeFill 
-    fill: $colorDark
-
-.activeSkew
-    opacity: 1
-
 // animShow
 .animShowLeft 
     transform: translateX(-120%)
@@ -314,11 +243,13 @@ h6,
 
 // sections
 .sectionOne, .sectionTwo
+    z-index: 13
+    overflow: hidden
     .container
         .content
             .contentItemOne
                 h3
-                    color: $colorDark
+                    color: $colorLight
                     font-size: 1.95vw
                     span 
                         background: linear-gradient(to left, $colorLightMidlle, $colorMidlle)
@@ -327,7 +258,7 @@ h6,
                 .itemTitle
                         font-size: 1.5vw
                 p
-                    color: $colorDark
+                    color: $colorLight
                     font-family: $fontReg
                     font-size: 1.5vw
 
@@ -336,7 +267,6 @@ section
     min-height: 100%
     width: 100%
     position: relative
-    background: $colorDark
     @include flexBox()
     .container
         .content
@@ -351,21 +281,15 @@ section
                 border-radius: 5px
                 img
                     transition: all .5s ease
-                    box-shadow: 0 0 20px $colorDark
+                    box-shadow: 0 5px 20px $colorLight
                     position: relative
                     display: block
                     border-radius: 5px
                     &:hover
-                        box-shadow: 0 0 30px $colorDark
+                        box-shadow: 0 5px 30px $colorLight
 
 .sectionOne
-    background: url(../img/bgOne.jpg) center no-repeat
     position: relative
-    &::after
-        @include psAfterOrBefore()
-        background: #fff
-        opacity: 0.9
-        z-index: 5
     .container
         z-index: 10
         .contentHero
@@ -373,7 +297,7 @@ section
             user-select: none
             .heroTitle
                 position: relative
-                font-family: $fontHeroUltrabold
+                font-family: $fontHeroRegular
                 font-size: 18vw
                 width: 100%
                 color: $colorDark
@@ -398,32 +322,120 @@ section
             transition: all .3s ease
             &:hover
                 color: $colorDark
+                
 #sectionHero
     height: 100vh
 
-.additionBg
-    // background: linear-gradient(-45deg, $colorLightMidlle, $colorMidlle)
-    background: url(../img/bg.jpg) center no-repeat
-    &::after
-        @include psAfterOrBefore()
-        background: linear-gradient(-45deg, $colorLightMidlle, $colorMidlle)
-        opacity: 0.7
-        z-index: 5
+.animBg
+    width: 100%
+    height: 100vh
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 10
+    div
+        width: 100px
+        height: 60px
+        // width: 60px
+        position: absolute
+        top: 10%
+        left: 10%
+        animation: animFigureBg 4s linear infinite
+        background: linear-gradient(180deg, $colorLightMidlle, $colorMidlle)
+        border-radius: 15px
+        filter: blur(5px)
+        &::before
+            content: ""
+            position: absolute
+            top: -25px 
+            left: 0
+            width: 0
+            height: 0
+            border-left: 50px solid transparent
+            border-right: 50px solid transparent
+            border-bottom: 25px solid $colorLightMidlle
+        &::after
+            content: ""
+            position: absolute
+            bottom: -25px 
+            left: 0
+            width: 0
+            height: 0
+            border-left: 50px solid transparent
+            border-right: 50px solid transparent
+            border-top: 25px solid $colorMidlle
+
+        &:nth-child(1)
+            top: 20%
+            left: 20%
+            animation: animFigureBg 8s linear infinite
+
+        &:nth-child(2)
+            top: 26%
+            left: 89%
+            animation: animFigureBg 10s linear infinite
+
+        &:nth-child(3)
+            top: 80%
+            left: 90%
+            animation: animFigureBg 5s linear infinite
+
+        &:nth-child(4)
+            top: 65%
+            left: 75%
+            animation: animFigureBg 7s linear infinite
+
+        &:nth-child(5)
+            top: 90%
+            left: 10%
+            animation: animFigureBg 9s linear infinite
+
+        &:nth-child(6)
+            top: 30%
+            left: 60%
+            animation: animFigureBg 5s linear infinite
+
+        &:nth-child(7)
+            top: 70%
+            left: 33%
+            animation: animFigureBg 8s linear infinite
+
+        &:nth-child(8)
+            top: 75%
+            left: 60%
+            animation: animFigureBg 10s linear infinite
+
+        &:nth-child(9)
+            top: 23%
+            left: 50%
+            animation: animFigureBg 6s linear infinite
+
+        &:nth-child(10)
+            top: 35%
+            left: 7%
+            animation: animFigureBg 10s linear infinite
+
+.animBgSec
+    height: 100%
+    z-index: 9
+
+@keyframes animFigureBg
+    0%
+        transform: scale(0) translateY(0) rotate(50deg)
+
+    100%
+        transform: scale(1.2) translateY(-250px) rotate(360deg)
 
 .sectionTwo 
-    background: $colorDark
-    z-index: 1
+    box-shadow: 0 0 10px #000
     .container
         .content
             flex-flow: row-reverse nowrap
             .contentItemOne
                 h3, p
-                    color: $colorLight
             .contentItemTwo
                 img
-                    box-shadow: 0 0 10px $colorLight
                     &:hover
-                        box-shadow: 0 0 20px $colorLight
 
 footer
     width: 100%
@@ -447,7 +459,7 @@ footer
                     transition: 0.3s ease
                     &:hover
                         transform: scale(1.2)
-                        fill: $colorDark    
+                        fill: $colorLightMidlle    
         .footerLine
             width: 70%
             height: 2px
@@ -488,15 +500,11 @@ footer
             font-size: 2vw
         button
             font-size: 2.5vw
-        .sectionOne
-            background: url(../img/bg.jpg) center / 300% no-repeat
         .heroSocials
             a
                 svg
                     width: 5vw
                     height: 5vw
-        .additionBg
-            background: url(../img/bg.jpg) center / 350% no-repeat
         footer 
             .container 
                 .heroSocials
@@ -542,7 +550,7 @@ footer
                     height: 7vw
         footer 
             .container 
-                padding: 100px 0px 50px
+                padding: 50px 0px
                 .heroSocials
                     a
                         svg
