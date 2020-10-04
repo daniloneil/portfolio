@@ -60,11 +60,6 @@ $fontReg: 'Open Sans Condensed', sans-serif
         .container 
             justify-content: center
 
-            .loaderContent 
-                // .logo 
-                //     @include flexBox()
-                //     justify-content: center
-                //     flex-flow: column nowrap
 .loaderContent 
     animation: anim 1.6s ease-out 1s infinite both
 
@@ -403,14 +398,38 @@ section
             .contentItemTwo
                 z-index: 2
                 border-radius: 5px
+                overflow: hidden
+                .cover
+                    color: $colorLight
+                    font-family: $fontHeroRegular
+                    background: linear-gradient(-45deg, $colorLightMidlle, $colorMidlle)
+                    border-radius: 5px
+                    width: 100%
+                    height: 100%
+                    z-index: 199
+                    position: absolute
+                    transition: all 0.3s ease-in
+                    
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    flex-flow: column nowrap
+                    &:hover
+                        opacity: 0
+                    .coverText
+                        position: relative
+                        transform: rotate(-25deg)
+                        text-align: center
+                        font-size: 7vw
+                        text-transform: uppercase
                 img
                     transition: all .5s ease
-                    box-shadow: 0 3px 10px $colorLight
+                    // box-shadow: 0 3px 10px $colorLight
                     position: relative
                     display: block
                     border-radius: 5px
                     &:hover
-                        box-shadow: 0 3px 20px $colorLight
+                        // box-shadow: 0 3px 20px $colorLight
 
 .sectionOne
     position: relative
@@ -496,6 +515,8 @@ footer
 @media screen and ( max-width: 768px)
     .cursors
         display: none
+    .coverText
+        font-size: 14vw
     .page
         section 
             .container
@@ -520,6 +541,9 @@ footer
                     .contentItemTwo
                         order: 0
                         width: 70%
+                        .cover
+                            .coverText
+                                font-size: 14vw
                 .contentHero
                     flex-flow: row wrap
         .scrollButton

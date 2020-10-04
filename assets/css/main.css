@@ -36,6 +36,7 @@
 .preloader .loader .container {
   justify-content: center;
 }
+
 .loaderContent {
   animation: anim 1.6s ease-out 1s infinite both;
 }
@@ -406,18 +407,39 @@ section .container .content .contentItemOne, section .container .content .conten
 section .container .content .contentItemTwo {
   z-index: 2;
   border-radius: 5px;
+  overflow: hidden;
+}
+section .container .content .contentItemTwo .cover {
+  color: #fafafa;
+  font-family: "Monument Extended Regular";
+  background: linear-gradient(-45deg, #9929ea, #5808fb);
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  z-index: 199;
+  position: absolute;
+  transition: all 0.3s ease-in;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+}
+section .container .content .contentItemTwo .cover:hover {
+  opacity: 0;
+}
+section .container .content .contentItemTwo .cover .coverText {
+  position: relative;
+  transform: rotate(-25deg);
+  text-align: center;
+  font-size: 7vw;
+  text-transform: uppercase;
 }
 section .container .content .contentItemTwo img {
   transition: all 0.5s ease;
-  box-shadow: 0 3px 10px #fafafa;
   position: relative;
   display: block;
   border-radius: 5px;
 }
-section .container .content .contentItemTwo img:hover {
-  box-shadow: 0 3px 20px #fafafa;
-}
-
 .sectionOne {
   position: relative;
 }
@@ -520,6 +542,10 @@ footer .container .footerLine {
     display: none;
   }
 
+  .coverText {
+    font-size: 14vw;
+  }
+
   .page section .container .content {
     display: flex;
     flex-flow: column nowrap;
@@ -552,6 +578,9 @@ footer .container .footerLine {
   .page section .container .content .contentItemTwo {
     order: 0;
     width: 70%;
+  }
+  .page section .container .content .contentItemTwo .cover .coverText {
+    font-size: 14vw;
   }
   .page section .container .contentHero {
     flex-flow: row wrap;
