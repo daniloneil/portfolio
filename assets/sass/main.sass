@@ -61,32 +61,12 @@ $fontReg: 'Open Sans Condensed', sans-serif
             justify-content: center
 
             .loaderContent 
-                .logo 
-                    @include flexBox()
-                    justify-content: center
-                    flex-flow: column nowrap
-                    line-height: 0.85
-                    span
-                        font-family: $fontHeroUltrabold
-                        font-size: 10vw
-                        background: linear-gradient(to left, $colorLightMidlle, $colorMidlle)
-                        -webkit-background-clip: text
-                        -webkit-text-fill-color: transparent
-
+                // .logo 
+                //     @include flexBox()
+                //     justify-content: center
+                //     flex-flow: column nowrap
 .loaderContent 
     animation: anim 1.6s ease-out 1s infinite both
-
-@keyframes anim 
-    0% 
-        opacity: 0
-    
-
-    50% 
-        opacity: 1
-    
-
-    100% 
-        opacity: 0
 
 html
     cursor: none
@@ -358,13 +338,32 @@ h6,
         overflow: hidden
     .circleText 
         font: 100px/100px $fontHeroRegular
-        letter-spacing: 20.5px
+        letter-spacing: 8.5px
         width: 100%
         fill: $colorLight
      
 @keyframes rotate 
   to 
     transform: rotate(360deg)
+
+.circleLoader
+    margin: 0 auto
+    height: 100%
+    top: 0
+    left: 0 
+    svg 
+        animation: rotate 10s linear infinite
+        width: 30vw
+        height: 30vw
+        position: absolute
+        top: calc(50% - 15vw)
+        left: calc(50% - 15vw)
+        overflow: hidden
+    .circleText 
+        font: 100px/100px $fontHeroRegular
+        letter-spacing: 8.5px
+        width: 100%
+        fill: $colorLight
 
 // sections
 .sectionOne, .sectionTwo

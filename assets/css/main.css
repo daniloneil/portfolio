@@ -36,38 +36,10 @@
 .preloader .loader .container {
   justify-content: center;
 }
-.preloader .loader .container .loaderContent .logo {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: space-evenly;
-  justify-content: center;
-  flex-flow: column nowrap;
-  line-height: 0.85;
-}
-.preloader .loader .container .loaderContent .logo span {
-  font-family: "Monument Extended Ultrabold";
-  font-size: 10vw;
-  background: linear-gradient(to left, #9929ea, #5808fb);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .loaderContent {
   animation: anim 1.6s ease-out 1s infinite both;
 }
 
-@keyframes anim {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 html {
   cursor: none;
 }
@@ -353,7 +325,7 @@ h6,
 }
 .circle .circleText {
   font: 100px/100px "Monument Extended Regular";
-  letter-spacing: 10.5px;
+  letter-spacing: 8.5px;
   width: 100%;
   fill: #fafafa;
 }
@@ -363,6 +335,28 @@ h6,
     transform: rotate(360deg);
   }
 }
+.circleLoader {
+  margin: 0 auto;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.circleLoader svg {
+  animation: rotate 10s linear infinite;
+  width: 30vw;
+  height: 30vw;
+  position: absolute;
+  top: calc(50% - 15vw);
+  left: calc(50% - 15vw);
+  overflow: hidden;
+}
+.circleLoader .circleText {
+  font: 100px/100px "Monument Extended Regular";
+  letter-spacing: 8.5px;
+  width: 100%;
+  fill: #fafafa;
+}
+
 .sectionOne, .sectionTwo {
   z-index: 13;
   overflow: hidden;
