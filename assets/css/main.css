@@ -423,6 +423,7 @@ section .container .content .contentItemTwo .cover {
   justify-content: center;
   align-items: center;
   flex-flow: column nowrap;
+  overflow: hidden;
 }
 section .container .content .contentItemTwo .cover:hover {
   opacity: 0;
